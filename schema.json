@@ -1,0 +1,399 @@
+[
+    {
+        "name": "frame_info",
+        "type": "RECORD",
+        "mode": "REPEATED",
+        "fields": [
+        {
+            "name": "ts_sec",
+            "type": "Timestamp",
+            "mode": "NULLABLE"
+        },
+        {
+            "name": "ts_usec",
+            "type": "Timestamp",
+            "mode": "NULLABLE"
+        },
+        {
+            "name": "incl_len",
+            "type": "INTEGER",
+            "mode": "NULLABLE"
+        },
+        {
+            "name": "orig_len",
+            "type": "INTEGER",
+            "mode": "NULLABLE"
+        }
+        
+    ]
+    },
+    {
+        "name": "time",
+        "type": "Timestamp",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "number",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "time_epoch",
+        "type": "Timestamp",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "len",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "cap_len",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "packet",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "ethernet",
+        "type": "RECORD",
+        "mode": "REPEATED",
+        "fields": [
+            {
+                "name": "dst",
+                "type": "STRING",
+                "mode": "NULLABLE"
+            },
+            {
+                "name": "src",
+                "type": "STRING",
+                "mode": "NULLABLE"
+            },
+            {
+                "name": "type",
+                "type": "STRING",
+                "mode": "NULLABLE"
+            },
+            {
+                "name": "packet",
+                "type": "RECORD",
+                "mode": "REPEATED",
+                "fields": [
+                    {
+                        "name": "header",
+                        "type": "STRING",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "payload",
+                        "type": "STRING",
+                        "mode": "NULLABLE"
+                    }  
+                ]
+            },
+            {
+                "name": "ipv4",
+                "type": "RECORD",
+                "mode": "REPEATED",
+                "fields": [
+                    {
+                        "name": "version",
+                        "type": "STRING",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "hdr_len",
+                        "type": "INTEGER",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "dsfield",
+                        "type": "RECORD",
+                        "mode": "REPEATED",
+                        "fields": [
+                            {
+                                "name": "dscp",
+                                "type": "STRING",
+                                "mode": "REPEATED"
+                                
+                            },
+                            {
+                                "name": "ecn",
+                                "type": "STRING",
+                                "mode": "NULLABLE"
+                            }  
+                        ]
+                    },
+                    {
+                        "name": "len",
+                        "type": "INTEGER",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "id",
+                        "type": "INTEGER",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "flags",
+                        "type": "RECORD",
+                        "mode": "REPEATED",
+                        "fields": [
+                            {
+                                "name": "df",
+                                "type": "BOOLEAN",
+                                "mode": "NULLABLE"
+                            },
+                            {
+                                "name": "mf",
+                                "type": "BOOLEAN",
+                                "mode": "NULLABLE"
+                            }  
+                        ]
+                    },
+                    {
+                        "name": "frag_offset",
+                        "type": "INTEGER",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "ttl",
+                        "type": "INTEGER",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "proto",
+                        "type": "STRING",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "checksum",
+                        "type": "STRING",
+                        "mode": "NULLABLE"
+                    },  {
+                        "name": "src",
+                        "type": "STRING",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "dst",
+                        "type": "STRING",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "packet",
+                        "type": "RECORD",
+                        "mode": "REPEATED",
+                        "fields": [
+                            {
+                                "name": "header",
+                                "type": "STRING",
+                                "mode": "NULLABLE"
+                            },
+                            {
+                                "name": "payload",
+                                "type": "STRING",
+                                "mode": "NULLABLE"
+                            }  
+                        ]
+                    },
+                    {
+                        "name": "tcp",
+                        "type": "RECORD",
+                        "mode": "REPEATED",
+                        "fields": [
+                            {
+                                "name": "srcport",
+                                "type": "INTEGER",
+                                "mode": "NULLABLE"
+                            },
+                            {
+                                "name": "dstport",
+                                "type": "INTEGER",
+                                "mode": "NULLABLE"
+                            },
+                            {
+                                "name": "seq",
+                                "type": "INTEGER",
+                                "mode": "NULLABLE"
+                            },
+                            {
+                                "name": "ack",
+                                "type": "INTEGER",
+                                "mode": "NULLABLE"
+                            }, 
+                            {
+                                "name": "hdr_len",
+                                "type": "INTEGER",
+                                "mode": "NULLABLE"
+                            },
+                            {
+                                "name": "flags",
+                                "type": "RECORD",
+                                "mode": "REPEATED",
+                                "fields": [
+                                    {
+                                        "name": "ns",
+                                        "type": "BOOLEAN",
+                                        "mode": "NULLABLE"
+                                    },
+                                    {
+                                        "name": "cwr",
+                                        "type": "BOOLEAN",
+                                        "mode": "NULLABLE"
+                                    },
+                                    {
+                                        "name": "ece",
+                                        "type": "BOOLEAN",
+                                        "mode": "NULLABLE"
+                                    },
+                                    {
+                                        "name": "urg",
+                                        "type": "BOOLEAN",
+                                        "mode": "NULLABLE"
+                                    },
+                                    {
+                                        "name": "ack",
+                                        "type": "BOOLEAN",
+                                        "mode": "NULLABLE"
+                                    },
+                                    {
+                                        "name": "psh",
+                                        "type": "BOOLEAN",
+                                        "mode": "NULLABLE"
+                                    },
+                                    {
+                                        "name": "rst",
+                                        "type": "BOOLEAN",
+                                        "mode": "NULLABLE"
+                                    },
+                                    {
+                                        "name": "syn",
+                                        "type": "BOOLEAN",
+                                        "mode": "NULLABLE"
+                                    },
+                                    {
+                                        "name": "fin",
+                                        "type": "BOOLEAN",
+                                        "mode": "NULLABLE"
+                                    }  
+                                ]
+                            },
+                            {
+                                "name": "window_size",
+                                "type": "INTEGER",
+                                "mode": "NULLABLE"
+                            }, 
+                            {
+                                "name": "checksum",
+                                "type": "STRING",
+                                "mode": "NULLABLE"
+                            },
+                            {
+                                "name": "urgent_pointer",
+                                "type": "INTEGER",
+                                "mode": "NULLABLE"
+                            }, 
+                            {
+                                "name": "opt",
+                                "type": "STRING",
+                                "mode": "REPEATED"
+                                
+                            },
+                            {
+                                "name": "nop",
+                                "type": "RECORD",
+                                "mode": "REPEATED",
+                                "fields": [
+                                    
+                                        {
+                                            "name": "kind",
+                                            "type": "INTEGER",
+                                            "mode": "NULLABLE"
+                                        },
+                                        {
+                                            "name": "length",
+                                            "type": "INTEGER",
+                                            "mode": "NULLABLE"
+                                        } 
+                                    
+                                ]
+                            },
+                            {
+                                "name": "ts",
+                                "type": "RECORD",
+                                "mode": "REPEATED",
+                                "fields": [
+                                    {
+                                        "name": "kind",
+                                        "type": "INTEGER",
+                                        "mode": "NULLABLE"
+                                    },
+                                    {
+                                        "name": "length",
+                                        "type": "INTEGER",
+                                        "mode": "NULLABLE"
+                                    }, 
+                                    {
+                                        "name": "val",
+                                        "type": "INTEGER",
+                                        "mode": "NULLABLE"
+                                    },
+                                    {
+                                        "name": "ecr",
+                                        "type": "INTEGER",
+                                        "mode": "NULLABLE"
+                                    }    
+                                ]
+                            },
+                            {
+                                "name": "packet",
+                                "type": "RECORD",
+                                "mode": "REPEATED",
+                                "fields": [
+                                    {
+                                        "name": "header",
+                                        "type": "STRING",
+                                        "mode": "NULLABLE"
+                                    },
+                                    {
+                                        "name": "payload",
+                                        "type": "STRING",
+                                        "mode": "NULLABLE"
+                                    }   
+                                ]
+                            },
+                            {
+                                "name": "raw",
+                                "type": "RECORD",
+                                "mode": "REPEATED",
+                                "fields": [
+                                    {
+                                        "name": "packet",
+                                        "type": "STRING",
+                                        "mode": "NULLABLE"
+                                    },
+                                    {
+                                        "name": "error",
+                                        "type": "STRING",
+                                        "mode": "NULLABLE"
+                                    }   
+                                ]
+                            }
+
+
+                        ]
+                    }    
+                ]
+            }
+        ]
+    },
+    {
+        "name": "protocols",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    }
+]
