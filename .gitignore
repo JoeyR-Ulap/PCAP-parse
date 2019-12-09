@@ -104,4 +104,4 @@ venv.bak/
 .mypy_cache/
 
 #service_account
-kubeflow-test-260816-6e4b941d52d5.json
+kubeflow-test-*

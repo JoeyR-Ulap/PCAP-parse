@@ -5,13 +5,17 @@ import csv
 from google.cloud import bigquery
 from google.cloud import storage
 import pcapkit
+from flask import Flask
 
 bucket_name = "pcap-files"
-directory = "/Users/andrewhuh/ulap/PCAP-parse/"
+directory = "/Users/andrewhuh/Ulap/PCAP-parse/"
 
-bq_client = bigquery.Client(project="kubeflow-test-260816").from_service_account_json(directory + "kubeflow-test-260816-6e4b941d52d5.json")
-storage_client = storage.Client(project="kubeflow-test-260816").from_service_account_json(directory + "kubeflow-test-260816-6e4b941d52d5.json")
+bq_client = bigquery.Client(project="kubeflow-test-260816").from_service_account_json(directory + "kubeflow-test-260816-ccc94a55bcba.json")
+storage_client = storage.Client(project="kubeflow-test-260816").from_service_account_json(directory + "kubeflow-test-260816-ccc94a55bcba.json")
 
+app = Flask(__name__)
+
+@app.route('/')
 def PCAP_analysis():
 
 	for filename in os.listdir(directory):
@@ -59,16 +63,8 @@ def PCAP_analysis():
 				bq_pcap_table, job_config=job_config)
 
 
+			return "Success"
 
-
-
-
-
-
-
-
-def main():
-	PCAP_analysis()
 
 if __name__ == '__main__':
-	main()
+    app.run()
