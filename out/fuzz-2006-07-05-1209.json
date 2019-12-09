@@ -1,0 +1,16 @@
+{
+	"Global Header" : {
+		"magic_number" : {
+			"data" : "a1 b2 c3 d4",
+			"byteorder" : "big",
+			"nanosecond" : false
+		},
+		"version_major" : 2,
+		"version_minor" : 4,
+		"thiszone" : 0,
+		"sigfigs" : 0,
+		"snaplen" : 65535,
+		"network" : "No.16777216 Unassigned [16777216]",
+		"packet" : "a1 b2 c3 d4 00 02 00 04 00 00 00 00 00 00 00 00 00 00 ff ff 00 00 00 01"
+	}
+}
